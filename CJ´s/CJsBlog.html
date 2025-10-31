@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CJ's Blog</title>
+  <style>
+    body { /* Estilo padrão do corpo da página */
+      margin: 0; /* Remove margens padrão adicionadas pelo navegador, permitindo que o conteúdo ocupe toda a área disponível */
+      font-family:system-ui, 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif; /* Define a fonte padrão da página */
+      background-color: #fdd5f2; /* Define a cor de fundo da página */
+      text-align: center; /* Centraliza o texto dentro do corpo da página */
+    }
+
+    .container { /* Define um contêiner centralizado para o conteúdo da página */
+  max-width: 1200px; /* Define a largura máxima do contêiner */
+  margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+  padding: 20px; /* Adiciona um espaçamento interno de 20 pixels */
+}
+
+  .lista-iconesJu li { /* Estilo para os itens da lista de ícones */
+            margin-bottom: 10px; /* Adiciona um espaçamento inferior de 10 pixels entre os itens */
+            list-style-type: none; /* Remove os marcadores padrão da lista */
+            padding-left: 25px; /* Adiciona um espaçamento à esquerda de 25 pixels */
+            position: relative; /* Define a posição relativa para permitir o posicionamento absoluto dos pseudo-elementos */
+        }
+        
+        .lista-iconesJu li:before { /* Ícone antes de cada item da lista */
+            content: "𖦹"; /* Ícone de marcador */
+            position: absolute; /* Posiciona o ícone de forma absoluta em relação ao item da lista */
+            left: 0; /* Alinha o ícone à esquerda do item da lista */
+            color: #e06b92; /* Define a cor do ícone */
+        }
+
+
+      .grid-container { /* Define um contêiner de grade para organizar o layout */
+      display: grid; /* Ativa o layout de grade */
+      grid-template-columns: 1fr 1.5fr 1fr; /* Define três colunas com proporções 1:1.5:1 */
+      gap: 10px; /* Define um espaçamento de 10 pixels entre as colunas */
+      padding: 20px; /* Adiciona um espaçamento interno de 20 pixels */
+    }
+
+    .coluna { /* Estilo para as colunas dentro do contêiner de grade */
+      padding: 15px; /* Adiciona um espaçamento interno de 15 pixels */
+      border-radius: 15px; /* Arredonda os cantos das colunas */
+    }
+
+    .esquerda, .direita { /* Estilo específico para as colunas esquerda e direita */
+      background-color: #eec8e1; /* Define a cor de fundo das colunas esquerda e direita */
+    }
+
+     .central { /* Estilo específico para a coluna central */
+      background-color: #eeb2d6; /* Define a cor de fundo da coluna central */
+      max-width: 100%; /* Garante que a coluna central não exceda a largura máxima do contêiner */
+      overflow: hidden; /* Oculta o conteúdo que excede a altura da coluna */
+     
+    }
+
+    .foto-redonda { /* Estilo para imagens redondas */
+  width: 150px; /* Largura da imagem */
+  height: 150px; /* Altura da imagem */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+  border-radius: 50%;   /* Arredonda os cantos da imagem para torná-la redonda */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave à imagem */
+}
+
+.lista-icones { /* Estilo para a lista de ícones */
+  list-style-type: none; /* Remove os marcadores padrão da lista */
+  padding: 0; /* Remove o preenchimento padrão */
+  text-align: center; /* Centraliza o texto dentro da lista */
+}
+
+.redes{ /* Estilo para a seção de redes sociais */
+  display: flex;
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  gap: 10px; /* Define um espaçamento de 10 pixels entre os botões */
+  margin-top: 10px; /* Adiciona um espaçamento superior de 10 pixels */
+  flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha se necessário */
+}
+
+.gallery { /* Estilo para a galeria de imagens */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  overflow-x: hidden;
+}
+
+.gallery img { 
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.botao { /* Estilo para os botões de redes sociais */
+  padding: 10px 16px; /* Espaçamento interno do botão */
+  border-radius: 20px;   /* Bordas arredondadas */
+  text-decoration: none; /* Remove o sublinhado do texto */
+  color: white; /* Cor do texto */
+  font-weight: bold; /* Deixa o texto em negrito */
+  transition: 0.3s ease; /* Transição suave para efeitos de hover */
+}
+.instaCeci {
+  background-color: #e06b92; /* rosa Instagram */
+
+}
+.TikTokCeci {
+  background-color: gray; /* cinza TikTok */
+}
+
+.instaJu {
+  background-color: #e06b92;
+}
+
+.TikTokJu {
+  background-color: gray;
+}
+
+.botao:hover { /* Efeito de hover para os botões */
+  opacity: 0.8;
+}
+
+.spotify-container { /* Estilo para o contêiner do Spotify */
+            margin: 30px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+.carrossel-container.pequeno {
+  width: 540px; /* Largura do carrossel */
+  height: 180px; /* Altura do carrossel */
+  overflow: hidden; /* Oculta o conteúdo que excede a altura do carrossel */
+  margin: 0 auto; /* Centraliza o carrossel horizontalmente */
+  border-radius: 10px; /* Arredonda os cantos do carrossel */
+  display: flex; 
+}
+
+.carrossel.pequeno { /* Estilo para o carrossel de imagens */
+  display: flex;
+  animation: deslizarQuadrado 20s linear infinite; /* Animação de deslizar as imagens */
+}
+
+.carrossel.pequeno img { /* Estilo para as imagens dentro do carrossel */
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 0 10px;
+  flex-shrink: 0; /* Impede que as imagens encolham */
+}
+
+@keyframes deslizarQuadrado { /* Animação para deslizar as imagens do carrossel */
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.lista-iconesCe li {
+            margin-bottom: 10px;
+            list-style-type: none;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .lista-iconesCe li:before {
+            content: "𖦹";
+            position: absolute;
+            left: 0;
+            color: #e06b92;
+        }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="grid-container"> <!-- Contêiner de grade para o layout -->
+    <div class="coluna esquerda"> <!-- Coluna esquerda -->
+      <img src="fotosCJ/Ceci.jpg" alt="Cecilya" width="300" height="200" class="foto-redonda" /> <!-- Imagem redonda de Cecilya -->
+      <h3>Sobre Cecilya</h3> 
+      <h3>Anna Cecilya</h3> 
+      <ul class="lista-iconesCe li"> <!-- Lista não ordenada de ícones com informações sobre Cecilya -->
+  <li>Técnica de Informática</li> 
+  <li>Jovem Aprendiz - TI</li>
+  <li>Católica</li>
+</ul>
+  <h4>Redes Sociais 🡇</h4> 
+  <div class = "redes"> <!-- Seção de redes sociais -->
+  <a href="http://instagram.com/Cecilyagoulart" target="_blank" class="botao instaCeci">Instagram</a> <!-- Botão com link do Instagram  -->
+  <a href="http://tiktok.com/CecilyaGoulart" target="_blank" class="botao TikTokCeci">TikTok</a> <!-- Botão com link do TikTok -->
+</div>
+<h4>Sobre Cecílya ♡</h4>
+  <a href="paginaCecilya.html"> <!-- Link para a página de Cecilya -->
+    <img src="fotosCecilya/ceciCrianca.jpg" width="240px" height="280px" style="border-radius: 10px;" alt="Cecilya Bebê"></a> <!-- Imagem de Cecilya com bordas arredondadas -->
+    <h5>Clique na imagem!</h5>
+    </div>
+
+    <div class="coluna central"> <!-- Coluna central -->
+      <img src="fotosCJ/C1.png" alt="Logo CJ" width="350" height="200" class="foto-perfil" /> <!-- Imagem do logo CJ -->
+      <h1>CJ´s Blog - Lifestyle</h1>
+      <p>Olá! Seja bem-vindo(a) ao nosso blog. Aqui você irá acompanhar o nosso lifestyle.</p>
+
+      <br/> <!-- Quebra entre seções -->
+      <h3>Nosso aesthetic! ♡</h3>
+      <div class="carrossel-container pequeno"> <!-- Contêiner do carrossel -->
+        <div class="carrossel pequeno"> <!-- Carrossel de imagens -->
+    <img src="fotosCJ/academia1.jpg" alt="Foto 1" />
+    <img src="fotosCJ/estudos1.jpg" alt="Foto 2" />
+    <img src="fotosCJ/informatica1.jpg" alt="Foto 3" />
+    <img src="fotosCJ/amigas1.jpg" alt="Foto 4" />
+    <img src="fotosCJ/fotoigreja2.jpg" alt="Foto 5" />
+    <img src="fotosCJ/estudos2.jpg" alt="Foto 6" />
+    <img src="fotosCJ/informatica2.jpg" alt="Foto 7" />
+    <img src="fotosCJ/academia2.jpg" alt="Foto 8" />
+    <!-- Repete as mesmas imagens para dar looping no carrossel -->
+    <img src="fotosCJ/academia1.jpg" alt="Foto 1" />
+    <img src="fotosCJ/estudos1.jpg" alt="Foto 2" />
+    <img src="fotosCJ/informatica1.jpg" alt="Foto 3" />
+    <img src="fotosCJ/amigas1.jpg" alt="Foto 4" />
+    <img src="fotosCJ/fotoigreja2.jpg" alt="Foto 5" />
+    <img src="fotosCJ/estudos2.jpg" alt="Foto 6" />
+    <img src="fotosCJ/informatica2.jpg" alt="Foto 7" />
+    <img src="fotosCJ/academia2.jpg" alt="Foto 8" />
+    
+    
+    </div>
+    </div>
+
+    <br/>
+      <h3>Playlist colaborativa no Spotify 🡇</h3>
+      <div class="spotify-container"> <!-- Contêiner para o Spotify -->
+       <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1iv8NLAFl3C4ekeuupHktH?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> <!-- Iframe do Spotify com a playlist colaborativa -->
+    </div>
+    </div>
+    
+
+    <div class="coluna direita"> <!-- Coluna direita -->
+  <img src="fotosCJ/j.jpeg" alt="Maria Júlia" class="foto-redonda" />  <!-- Imagem redonda de Maria Júlia -->
+  <h3>Maria Júlia</h3> 
+  <ul class="lista-iconesJu"> 
+            <li>Técnica de Informática (2023-2026)</li>
+            <li>Estagiária na DunasSoft Tecnologia (2025) </li>
+            <li>Estudante</li>
+            <li>Católica</li>
+            <li>Atleta</li>
+        </ul>
+    <h4>Redes Sociais 🡇</h4>
+     <div class="redes"> <!-- Seção de redes sociais -->
+    <a href="http://instagram.com/juliacruzmr" target="_blank" class="botao instaJu">Instagram</a> <!-- Botão com link do Instagram -->
+    <a href="https://www.tiktok.com/@juliacruzmr" target="_blank" class="botao TikTokJu">TikTok</a> <!-- Botão com link do TikTok -->
+    <a href="https://open.spotify.com/user/31mfrh7rr3dzp5ok2idbc4mqmw5i?si=b8577d6f525d4188" target="_blank" class="botao instaJu">Spotify</a> <!-- Botão com link do Spotify -->
+    <a href="https://pin.it/5RHaFxpOy" target="_blank" class="botao TikTokJu">Pinterest</a> <!-- Botão com link do Pinterest -->
+    <a href="https://github.com/JulinhaCruz" target="_blank" class="botao instaJu">GitHub</a> <!-- Botão com link do GitHub -->
+    <a href="https://www.skoob.com.br/usuario/8994482" target="_blank" class="botao TikTokJu">Skoob</a> <!-- Botão com link do Skoob -->
+  </div>
+  <h4>Sobre Júlia ♡</h4>
+  <a href="paginaJulinha.html"> <!-- Link para a página de Júlia -->
+    <img src="fotosJulia/juliaBB.jpg" width="240px" height="300px" style="border-radius: 10px;" alt="Julinha Bebê">
+  </a>
+  <h5>Clique na imagem!</h5>
+</div>
+  </div>
+
+</body>
+</html>

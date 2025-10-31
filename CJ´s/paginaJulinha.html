@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Júlia</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #906ba4;
+        }
+/* Barra superior fixa com sombra e destaque */
+        .barraSuperior {
+            background-color: #745485;
+            color: white;
+            padding: 15px 20px;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0, 0.2);
+            position: sticky; /* Fixa no topo da tela ao rolar */
+            top: 0;
+            z-index: 100; /* Garante que fique acima de outros elementos */
+        }
+/* Foto de perfil centralizada, em forma de círculo e com borda roxa */
+        .foto-perfil {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover; /* Evita distorção da imagem */
+            border: 4px solid #533c5f;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0, 0.2);
+         } 
+         /* conteiner branco onde tem os dados */
+        .conteudo {
+            max-width: 900px;
+            width: 90%;
+            border-radius: 10px;
+            margin: 0 auto 40px auto; /* Centraliza e dá espaço abaixo */
+            padding: 20px;
+            background-color: #dca0fc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #745485;
+            border-bottom: 2px solid #533c5f;
+            padding-bottom: 5px;
+        }
+        /* Lista com ícones personalizados (𖦹) ao lado dos itens */
+        .lista-icones li {
+            margin-bottom: 10px;
+            list-style-type: none;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .lista-icones li:before {
+            content: "𖦹";
+            position: absolute;
+            left: 0;
+            color: #533c5f;
+        }
+        
+        a {
+            color: #533c5f;
+            text-decoration: none;
+        }
+        /* Link com hover estilizado */
+        a:hover {
+            text-decoration: underline;
+        }
+/* Área de carrossel de imagens horizontal com animação automática */
+        .carrossel-container {
+            width: 800px;
+            height: 180px;
+            overflow: hidden; /* Esconde imagens fora da área visível */
+            margin: 0 auto;
+            border-radius: 12px;
+        }
+
+        .carrossel {
+            display: flex;
+            width: max-content;
+            animation: deslizar 15s linear infinite; /* Desliza continuamente */
+        }
+
+        .carrossel img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 0 10px;
+            flex-shrink: 0;
+        }
+
+        @keyframes deslizar {
+            0% { transform: translateX(0);}
+            100% {transform: translateX(-50%);}
+        }
+/* Livros e séries organizadas lado a lado, com tamanho fixo */
+        .livros {
+            display: flex;
+            justify-content: center;
+            gap: 20px;  /* Espaço entre imagens */
+            margin-top: 20px;
+        }
+
+        .livros img {
+            width: 100px;
+            height: 150px;   
+        }
+/* Container das playlists do Spotify lado a lado */
+        .spotify-container {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            justify-content: center;
+        }
+        .spotify-container iframe {
+            border-radius: 12px;
+            width: 48%; /* Deixa duas iframes lado a lado em telas médias */
+            height: 352px;
+            min-width: 280px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Toolbar no topo -->
+    <div class="barraSuperior">Júlia Cruz ♡</div>
+    
+    <!-- Imagem redonda -->
+    <img src="fotosJulia/juliaPerfil.jpg"Foto de Júlia" class="foto-perfil">
+    
+    <!-- Conteúdo único -->
+    <div class="conteudo">
+        <h2>⋆˙⟡ Sobre Mim</h2>
+        <p>Oi! Meu nome é Júlia, mas sou mais conhecida por Julinha. Gosto muito de ler, estudar, programar, estar com minha família e amigos, e AMO jogar handebol!
+            Nesta página você verá um pouquinho da minha vida e do meu lifestyle.</p>
+        
+        <h2>₊⊹ Habilidades</h2>
+        <ul class="lista-icones">
+            <li>Técnica de Informática (2023-2026)</li>
+            <li>Estagiária na DunasSoft Tecnologia (2025) </li>
+            <li>Estudante</li>
+            <li>Católica</li>
+            <li>Atleta</li>
+
+        </ul>
+        
+        <h2>₊⊹ Álbum de fotos Intercampi 2025</h2>
+        <p>Os Jogos Intercampi Estudantis 2025 - fase polos, ocorreu dos dias 16/06/25 à 18/06/25, e 
+            deixou memórias muito marcantes! Aqui está um pequeno carrossel de fotos dessa fase.
+            Partiu Mossoró! :D
+
+        </p>
+        <div class="carrossel-container">
+            <div class="carrossel">
+            <img src="fotosJulia/ic6.jpg" alt="foto1">
+            <img src="fotosJulia/ic3.jpg" alt="foto2">
+            <img src="fotosJulia/ic10.jpg" alt="foto3">
+            <img src="fotosJulia/ic2.jpg" alt="foto4">
+            <img src="fotosJulia/ic5.jpg" alt="foto5">
+            <img src="fotosJulia/ic4.jpg" alt="foto6">
+            <img src="fotosJulia/ic1.jpg" alt="foto7">
+            <img src="fotosJulia/ic7.jpg" alt="foto8">
+            <img src="fotosJulia/ic9.jpg" alt="foto9">
+        </div>
+    </div>
+        
+        <h2>₊⊹ Livros Preferidos</h2>
+        <p>Alguns dos meus livros prediletos! Ah, e me siga no <a href="https://www.skoob.com.br/usuario/8994482">Skoob</a></p> 
+        <div class="livros">
+        <img src="fotosJulia/crepusculo.jpg" alt="crepusculo" >
+        <img src="fotosJulia/aselecao.jpg" alt="aselecao" >
+        <img src="fotosJulia/overao.jpg" alt="overao" >
+        <img src="fotosJulia/jogosvorazes.jpg" alt="jogosvorazes" >
+        <img src="fotosJulia/verity.jpg" alt="verity" >
+        <img src="fotosJulia/soldameia.jpg" alt="soldameianoite">
+    </div>
+
+        <h2>₊⊹ Hobbys</h2>
+        <ul class="lista-icones">
+            <li>Assistir séries/filmes</li>
+            <li>Estudar assuntos que gosto</li>
+            <li>Jogar handebol (meu preferido)</li>
+            <li>Ir para a academia</li>
+            <li>Passear/viajar com família e amigos</li>
+        </ul>
+
+         <h2>₊⊹ Séries Preferidas</h2>
+       <p>Algumas das minhas séries preferidas! Eu tenho tantas que poderia passar o dia falando sobre cada uma delas!</p> 
+        <div class="livros">
+        <img src="fotosJulia/gg.jpg" alt="gg" >
+        <img src="fotosJulia/oth.png" alt="oth" >
+        <img src="fotosJulia/shadowhunters.jpg" alt="sh" >
+        <img src="fotosJulia/teenwolf.jpg" alt="tw" >
+        <img src="fotosJulia/tvd.jpg" alt="tvd" >
+        <img src="fotosJulia/casadodragao.jpg" alt="casadodragao">
+    </div>
+
+    <h2>₊⊹ Minhas Playlists</h2>
+    <div class="spotify-container">
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5niQgcs4Oo9z5CvtRpfRJV?utm_source=generator"  width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6ASPlLMX4hHTzgg5SJPSbk?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    
+</body>
+</html>

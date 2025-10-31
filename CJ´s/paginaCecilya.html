@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Cecílya</title>
+    <!--Estilo da página. Todo o design configurado utilizando CSS-->
+    <style>   
+        body { /* Estilo padrão do corpo da página */
+            margin: 0; /* Remove margens padrão adicionadas pelo navegador, permitindo que o conteúdo ocupe toda a área disponível */
+            padding: 0; /* Remove o preenchimento padrão (espaço entre o conteúdo e a borda interna) */
+            font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif; /* Define uma lista de fontes do texto, sendo prioridade aquela que vem em primeiro na lista */
+            background-color: #6993ac; /* Define a cor de fundo da página */
+        }
+
+        .barraSuperior { /* Estilo da barra superior */
+            background-color: #4e6e82; /* Cor de fundo da barra */
+            color: white; /* Cor do texto na barra */
+            padding: 15px 20px; /* Preenchimento interno da barra */
+            font-family:system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif; 
+            font-size: 1.7em; /* Tamanho da fonte do texto na barra */
+            font-weight: bold; /* Negrito do texto na barra */
+            text-align: center; /* Centraliza o texto na barra */
+            position: sticky; /* Faz com que a barra fique fixa no topo da página ao rolar */
+            top: 0; /* Posiciona a barra no topo da página */
+            z-index: 100; /* Garante que a barra fique acima de outros elementos da página */
+        }
+
+        .foto-perfil { /* Estilo da imagem de perfil */
+            width: 150px; /* Largura da imagem */
+            height: 150px; /* Altura da imagem */
+            border-radius: 50%; /* Torna a imagem redonda */
+            object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+            border: 4px solid #4e6d80; /* Borda ao redor da imagem */
+            display: block; /* Exibe a imagem como um bloco */ 
+            margin: 20px auto; /* Centraliza a imagem horizontalmente */
+            
+         } 
+         /* conteiner azul onde tem os dados */
+        .conteudo {
+            max-width: 900px; /* Largura máxima do conteúdo */
+            width: 90%; /* Largura do conteúdo em relação à largura da tela */
+            border-radius: 10px; /* Bordas arredondadas do conteúdo */
+            margin: 0 auto 40px auto; /* Centraliza o conteúdo horizontalmente e adiciona margem inferior */
+            padding: 20px; 
+            background-color: #80b4d1; /* Cor de fundo do conteúdo */
+        
+        }
+        
+        h2 { /* Estilo dos títulos de nível 2 */
+            color: #47687a; /* Cor do texto dos títulos */  
+            border-bottom: 2px solid #041838; /* Linha abaixo do título */
+            padding-bottom: 5px; /* Preenchimento abaixo do título */
+        }
+        
+        .lista-icones li { /* Estilo dos itens da lista de passatempos */
+            margin-bottom: 10px; /* Espaçamento entre os itens */
+            list-style-type: none; /* Remove os marcadores padrão da lista */
+            padding-left: 25px; /* Preenchimento à esquerda dos itens */
+            position: relative; /* Permite posicionar o pseudo-elemento antes do item */
+        }
+        
+        .lista-icones li:before { /* o ícone antes de cada item da lista */
+            content: "𖦹";
+            position: absolute; /* Posiciona o ícone */
+            left: 0; /* Alinha o ícone à esquerda do item */
+            color: #3c5d5f; /* Cor do ícone antes do item */
+        }
+        
+
+        .carrossel-container { /* Estilo do container do carrossel */
+            width: 800px; /* Largura do container do carrossel */
+            height: 180px; /* Altura do container do carrossel */
+            overflow: hidden; /* Esconde o conteúdo que ultrapassa a altura do container */
+            margin: 0 auto; /* Centraliza o container do carrossel */
+            border-radius: 12px; /* Bordas arredondadas do container */
+        }
+
+        .carrossel { /* Estilo do carrossel */
+            display: flex; /* Exibe os itens do carrossel em linha */
+            width: max-content; /* Largura do carrossel baseada no conteúdo */
+            animation: deslizar 20s linear infinite; /* Animação de deslizar */
+        }
+
+        .carrossel img { /* Estilo das imagens dentro do carrossel */
+            width: 160px; /* Largura de cada imagem */
+            height: 160px; /* Altura de cada imagem */
+            object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+            border-radius: 12px; /* Bordas arredondadas das imagens */
+            margin: 0 10px; /* Margem entre as imagens */
+            flex-shrink: 0; /* Impede que as imagens encolham */
+        }
+
+        @keyframes deslizar { /* Animação de deslizar do carrossel */
+            0% { transform: translateX(0);} 
+            100% {transform: translateX(-50%);}
+        } 
+
+        .livros { /* Estilo do container de livros */
+            display: flex;
+            justify-content: center;
+            gap: 20px;  /* Espaçamento entre os livros */
+            margin-top: 20px; /* Espaçamento entre os livros */
+        }
+
+        .livros img { /* Estilo das imagens dos livros */
+            width: 100px;
+            height: 150px;   
+        }
+
+       .receitas-estilo-playlist { /* Estilo do container de receitas */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card-receita-playlist { /* Estilo do card de receita */
+    width: 350px;
+    border-radius: 16px;
+    padding: 15px;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-receita-playlist .header { /* Estilo do cabeçalho dentro do card de receita */
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    gap: 15px; /* Espaçamento entre a imagem e as informações */
+}
+
+.card-receita-playlist img { /* Estilo da imagem dentro do card de receita */
+    width: 70px;
+    height: 70px;
+    border-radius: 12px; /* Bordas arredondadas da imagem */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+}
+
+.card-receita-playlist .info h3 { /* Estilo do título dentro do card de receita */
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.card-receita-playlist .info p { /* Estilo do parágrafo dentro do card de receita */
+    margin: 2px 0 0;
+    font-size: 0.9em;
+    opacity: 0.9; /* Levemente transparente */
+}
+
+.lista-receita { /* Estilo da lista de receitas */
+    list-style: decimal; /* Define a lista como numerada */
+    padding-left: 20px; /* Preenchimento à esquerda da lista */
+    font-size: 0.95em; /* Tamanho da fonte dos itens da lista */
+    line-height: 1.4; /* Espaçamento entre linhas */
+    color: #fffde6; /* Cor do texto */
+}
+ 
+.lista-receita li { /* Estilo dos itens da lista de receitas */
+    margin-bottom: 8px; /* Espaçamento entre os itens */
+}
+
+/* Cores diferentes para cada receita */
+.card-receita-playlist.chocolate {
+    background-color: #564044;
+}
+
+.card-receita-playlist.pave {
+    background-color: #00578d;
+}
+
+.card-receita-playlist.pizza {
+    background-color: #bd7c2f;
+}
+.card-receita-playlist.macarrao{
+    background-color: #314856;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Toolbar no topo -->
+    <div class="barraSuperior">Cecilya Goulart ♡</div>
+    
+    <!-- Imagem principal no formato redondo -->
+    <img src="fotosCecilya/momentos/Cecilya1.jpg" alt="Ceci" class="foto-perfil">
+    
+    <!-- Todo o conteúdo apresentado na página -->
+    <div class="conteudo">
+        <h2>⋆˙⟡ Sobre Mim</h2> <!--Título de nível 2-->
+        <p>Oii! Me chamo Anna Cecilya e nesta página você poderá acompanhar o que mais 
+            gosto de fazer.</p> <!-- Parágrafo de introdução -->
+       
+        <div class="carrossel-container"> <!-- Carrossel de imagens -->
+            <div class="carrossel"> <!--Container do carrossel-->
+        <img src="fotosCecilya/Eu&academia/acad.jpeg" alt="foto2">
+        <img src="fotosCecilya/Eu&academia/IMG_5099.jpg" alt ="foto4">
+        <img src="fotosCecilya/Eu&academia/IMG_0588.jpeg" alt="">
+        <img src="fotosCecilya/Eu&academia/IMG_1832 (1).jpg" alt="">
+        <img src="fotosCecilya/Eu&academia/F06B2CC2-A552-4C36-AE13-323495131D42.jpeg" alt="">
+        <img src="fotosCecilya/Eu&academia/IMG_3424.jpg" alt="">
+        <img src="fotosCecilya/Eu&academia/IMG_3343.jpg" alt=""> 
+        <!-- Imagens do carrossel. Elas se repetem para uma melhor visualização -->
+        <img src="fotosCecilya/Eu&academia/acad.jpeg" alt="foto2">
+        <img src="fotosCecilya/Eu&academia/IMG_5099.jpg" alt ="foto4">
+        <img src="fotosCecilya/Eu&academia/IMG_0588.jpeg" alt="">
+        <img src="fotosCecilya/Eu&academia/IMG_1832 (1).jpg" alt="">
+        <img src="fotosCecilya/Eu&academia/F06B2CC2-A552-4C36-AE13-323495131D42.jpeg" alt="">
+        <img src="fotosCecilya/Eu&academia/IMG_3424.jpg" alt="">
+        <img src="fotosCecilya/Eu&academia/IMG_3343.jpg" alt="">
+      </div> <!-- fim do carrossel de imagens -->
+    </div> <!-- fim do container do carrossel -->
+        <h2>₊⊹ Passatempos</h2>
+        <ul class="lista-icones"> <!-- Lista não ordenada de passatempos -->
+            <li>Tempo de qualidade com família e amigos</li>
+            <li>Estudar coisas relacionadas a TI</li>
+            <li>Escutar música</li>
+            <li>Cozinhar</li>
+            <li>Treinar</li>
+            <li>Ler</li>
+        </ul>
+        
+
+        <h2>₊⊹ Leituras</h2>
+        <p>Alguns dos meus livros lidos em 2025! </p> 
+        <div class="livros"> <!-- Container com imagens de livros -->
+        <img src="fotosCecilya/livros/coracao.jpg" alt="Eu e esse meu coração" >
+        <img src="fotosCecilya/livros/táticas.jpg" alt="Táticas do amor" >
+        <img src="fotosCecilya/livros/ferias.jpg" alt="Eu e esse meu coração" >
+        <img src="fotosCecilya/livros/teto.jpg" alt="Tetos para dois" >
+        <img src="fotosCecilya/livros/verao.jpg" alt="Leitura de verão" >
+        <img src="fotosCecilya/livros/fahren.jpg" alt="Gossip Girl" >
+        <img src="fotosCecilya/livros/laraJean.jpg" alt="Eu e esse meu coração" >
+    </div>
+     
+        <h2>₊⊹ Momentos 2025</h2>
+
+        <div class="carrossel-container">
+            <div class="carrossel">
+           <img src="fotosCecilya/momentos/implas.png" alt="">
+            <img src="fotosCecilya/momentos/familia.jpeg" alt="foto3">
+            <img src="fotosCecilya/momentos/isis.jpeg" alt="foto4">
+            <img src="fotosCecilya/momentos/turma.jpeg" alt="foto5">
+            <img src="fotosCecilya/momentos/amor.jpeg" alt="foto6">
+            <img src="fotosCecilya/momentos/cgj.jpeg" alt="foto7">
+            <img src="fotosCecilya/momentos/matriz.jpeg" alt="foto8">
+            <img src="fotosCecilya/momentos/santíssimo.jpeg" alt="foto9">
+            <img src="fotosCecilya/momentos/isiss.jpeg" alt="">
+            <img src="fotosCecilya/momentos/isis3.jpeg" alt="">
+            <img src="fotosCecilya/momentos/trio.jpeg" alt="">
+            <img src="fotosCecilya/momentos/bolo.jpeg" alt="">
+            <img src="fotosCecilya/momentos/isis3.jpeg" alt="">
+            <img src="fotosCecilya/momentos/implas.png" alt="">
+            <img src="fotosCecilya/momentos/familia.jpeg" alt="foto3">
+            <img src="fotosCecilya/momentos/isis.jpeg" alt="foto4">
+            <img src="fotosCecilya/momentos/turma.jpeg" alt="foto5">
+            <img src="fotosCecilya/amor.jpeg" alt="foto6">
+            <img src="fotosCecilya/cgj.jpeg" alt="foto7">
+            <img src="fotosCecilya/matriz.jpeg" alt="foto8">
+            <img src="fotosCecilya/santíssimo.jpeg" alt="foto9">
+            <img src="fotosCecilya/amor2.jpeg" alt="">
+            <img src="fotosCecilya/isiss.jpeg" alt="">
+            <img src="fotosCecilya/trio.jpeg" alt="">
+            <img src="fotosCecilya/bolo.jpeg" alt="">
+            <img src="fotosCecilya/isis3.jpeg" alt="">
+
+        </div>
+    </div>
+
+<h2>₊⊹ Receitinhas que amo</h2>
+<div class="receitas-estilo-playlist"> <!-- Container para as receitas -->
+    <!-- Cada card das receitas pertencem a um div com o seu determinado nome -->
+  <div class="card-receita-playlist chocolate"> 
+    <div class="header"> <!-- Cabeçalho do card -->
+      <img src="fotosCecilya/receitas/bolo.png" alt="Bolo de Chocolate"> 
+      <div class="info"> <!-- Informações do card -->
+        <h3>Bolo de Chocolate</h3> <!-- Título de nível 3-->
+      </div>
+    </div>
+    <ul class="lista-receita"> <!-- Lista não ordenada de ingredientes e modo de preparo -->
+      <li><strong>Massa:</strong> Farinha de aveia, cacau em pó, açúcar, leite, fermento, ovos.</li>
+      <li><strong>Cobertura:</strong> Cacau em pó, leite em pó, açúcar, água.</li>
+      <li><strong>Modo de preparo:</strong> Misture tudo e leve ao forno a 180°C por 30 min.</li>
+       <li><strong>Modo de preparo da calda:</strong> Adicione os ingredientes sólidos em uma panela e vá colocando a água aos poucos, mexendo até dissolver bem, sem deixar muito líquido. Leve ao fogo baixo e mexa até a calda engrossar.</li>
+    </ul>
+  </div>
+
+  <div class="card-receita-playlist pave">
+    <div class="header">
+      <img src="fotosCecilya/receitas/pave.png" alt="Pavê de chocolate">
+      <div class ="info">
+        <h3>Pavê</h3>
+        
+      </div>
+    </div>
+    <ul class="lista-receita">
+      <li><strong>Creme branco:</strong> Leite condensado, leite, amido de milho e uma pitada de sal</li>
+      <li><strong>Creme de chocolate:</strong> Cacau em pó, leite condensado, leite e amido de milho.</li>
+      <li>1 pacote de biscoito maisena</li>
+      <li><strong>Modo de preparo:</strong> Misture os cremes em panelas separadas, leve ao fogo médio até pegar consistência.</li>
+       <li> Molhe os biscoitos no leite e construa camadas intercalando entre os cremes e os biscoitos. </li>
+    </ul>
+  </div>
+
+  <div class="card-receita-playlist pizza">
+    <div class="header">
+      <img src="fotosCecilya/receitas/torta.jpg" alt="Pizza Caseira">
+      <div class="info">
+        <h3>Tortinha de frango</h3>
+      </div>
+    </div>
+    <ul class="lista-receita">
+      <li> <strong>Massa: </strong>Goma de tapioca (ou farinha de aveia), ovos, sal.</li>
+      <li>Cenoura ralada, frango desfiado e requeijão</li>
+      <li><strong>Modo de preparo:</strong> Misture os ingredientes e leve à air fryer por 15 minutos a 200°C.</li>
+    </ul>
+  </div>
+  <div class="card-receita-playlist macarrao">
+    <div class="header">
+      <img src="fotosCecilya/receitas/macarrao.webp" alt="Macarrão ao molho branco">
+      <div class="info">
+        <h3>Macarrão ao molho branco</h3>
+      </div>
+    </div>
+    <ul class="lista-receita">
+      <li> <strong>Molho: </strong>Leite, sal, creme de leite, manteiga, cebola, alho e o amido de milho</li>
+      <li>Macarrão ninho (a gosto)</li>
+      <li><strong>Modo de preparo:</strong> Doure a cebola e o alho na manteiga. Adicione o leite, o amido de milho e o sal, e misture bem até ferver. Após isso, acrescente o creme de leite e deixe em fogo baixo até formar o creme. Cozinhe o macarrão e misture ao molho.</li>
+    </ul>
+  </div>
+</div>
+</div>
+  
+    
+</body>
+</html>
