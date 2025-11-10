@@ -22,7 +22,7 @@ public class CadastroEmprestimoM {
         this.senha = senha;
         this.titulo = titulo;
 
-        // Salvando o empréstimo na lista (memória)
+        
         cadastroM.add(this);
     }
     
@@ -47,3 +47,4 @@ public class CadastroEmprestimoM {
         return genero;
     }
 }
+
