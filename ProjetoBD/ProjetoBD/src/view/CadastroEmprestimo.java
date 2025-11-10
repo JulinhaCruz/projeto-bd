@@ -55,7 +55,7 @@ public class CadastroEmprestimo extends JFrame {
         lblTituloJanela.setFont(new Font("Tahoma", Font.BOLD, 18));
         contentPane.add(lblTituloJanela);
 
-        // ===== ETAPA 1 – MATRÍCULA =====
+      
         lblMatricula = new JLabel("Matrícula:");
         lblMatricula.setForeground(Color.WHITE);
         lblMatricula.setFont(new Font("Arial", Font.BOLD, 15));
@@ -70,7 +70,7 @@ public class CadastroEmprestimo extends JFrame {
         btnProximo.setBounds(219, 150, 110, 30);
         contentPane.add(btnProximo);
 
-        // ===== ETAPA 2 – SENHA =====
+       
         lblSenha = new JLabel("Senha:");
         lblSenha.setForeground(Color.WHITE);
         lblSenha.setFont(new Font("Arial", Font.BOLD, 15));
@@ -88,7 +88,7 @@ public class CadastroEmprestimo extends JFrame {
         btnProximo2.setVisible(false);
         contentPane.add(btnProximo2);
 
-        // ===== ETAPA 3 – TÍTULO DO LIVRO =====
+      
         lblTitulo = new JLabel("Título do Livro:");
         lblTitulo.setForeground(Color.WHITE);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 15));
@@ -106,22 +106,19 @@ public class CadastroEmprestimo extends JFrame {
         btnConcluir.setVisible(false);
         contentPane.add(btnConcluir);
 
-        // Voltar (invisível no início)
+       
         btnVoltar = new JButton("Voltar");
         btnVoltar.setBounds(85, 149, 100, 33);
         btnVoltar.setVisible(false);
         contentPane.add(btnVoltar);
 
-        // ===== AÇÕES =====
-
-        // ETAPA 1 → ETAPA 2 (apenas avança para pedir senha; aqui já podemos checar se matrícula existe)
         btnProximo.addActionListener(e -> {
             String matricula = textFieldMatricula.getText().trim();
             if (matricula.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Digite a matrícula!");
                 return;
             }
-            // verificar se matrícula existe
+           
             if (!CadastroUserM.VerificMatricula(matricula)) {
                 JOptionPane.showMessageDialog(this, "Matrícula não encontrada.");
                 return;
@@ -137,7 +134,7 @@ public class CadastroEmprestimo extends JFrame {
             btnVoltar.setVisible(true);
         });
 
-        // ETAPA 2 → ETAPA 3 (verifica senha para a matrícula já informada)
+    
         btnProximo2.addActionListener(e -> {
             String matricula = textFieldMatricula.getText().trim();
             String senha = new String(textFieldSenha.getPassword()).trim();
@@ -163,7 +160,7 @@ public class CadastroEmprestimo extends JFrame {
         // Voltar: se estiver em título volta para senha; se estiver em senha volta para matrícula
         btnVoltar.addActionListener(e -> {
             if (lblTitulo.isVisible()) {
-                // volta de título para senha
+               
                 lblTitulo.setVisible(false);
                 textFieldTitulo.setVisible(false);
                 btnConcluir.setVisible(false);
@@ -172,7 +169,7 @@ public class CadastroEmprestimo extends JFrame {
                 textFieldSenha.setVisible(true);
                 btnProximo2.setVisible(true);
             } else if (lblSenha.isVisible()) {
-                // volta de senha para matrícula
+                
                 lblSenha.setVisible(false);
                 textFieldSenha.setVisible(false);
                 btnProximo2.setVisible(false);
@@ -180,11 +177,11 @@ public class CadastroEmprestimo extends JFrame {
                 lblMatricula.setVisible(true);
                 textFieldMatricula.setVisible(true);
                 btnProximo.setVisible(true);
-                btnVoltar.setVisible(false); // na etapa 1 não mostra Voltar
+                btnVoltar.setVisible(false); 
             }
         });
 
-        // FINALIZAR
+       
         btnConcluir.addActionListener(e -> {
         	    String matricula = textFieldMatricula.getText().trim();
         	    String senha = new String(textFieldSenha.getPassword()).trim();
@@ -218,3 +215,4 @@ public class CadastroEmprestimo extends JFrame {
 
     }
 }
+
