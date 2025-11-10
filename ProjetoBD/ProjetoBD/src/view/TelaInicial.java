@@ -84,11 +84,13 @@ public class TelaInicial extends JFrame {
 		menuConsulta.setForeground(new Color(245, 255, 250));
 		menuBar.add(menuConsulta);
 		
-		JMenuItem menuItemConsulta = new JMenuItem("Nova Consulta");
+		JMenuItem menuItemConsulta = new JMenuItem("Consultar Emprestimo");
 		menuItemConsulta.setForeground(new Color(245, 255, 250));
 		menuItemConsulta.setBackground(new Color(188, 143, 143));
 		menuConsulta.add(menuItemConsulta);
 		
+		menuItemConsulta.addActionListener(e -> new ConsultaEmprestimo().setVisible(true));
+
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(160, 82, 45));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -149,3 +151,4 @@ public class TelaInicial extends JFrame {
 	}
 	}
 	
+
